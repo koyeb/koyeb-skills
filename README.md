@@ -67,9 +67,6 @@ Shared files live in `plugins/koyeb/skills/_shared/`. After editing shared files
 
 Do not edit shared copies inside individual skills directly.
 
-## Testing
-
-See [TESTING.md](TESTING.md) for Claude Code agent tests.
 
 ## References
 

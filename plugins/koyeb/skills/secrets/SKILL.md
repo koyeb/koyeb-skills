@@ -27,22 +27,26 @@ Use this skill to create or manage secrets for Koyeb services.
 
 ## Commands
 
-- List secrets: `koyeb secret list`
-- Get secret: `koyeb secret get <secret-id-or-name>`
-- Describe secret: `koyeb secret describe <secret-id-or-name>`
-- Create secret: `koyeb secret create <name> --value <value>`
-- Update secret: `koyeb secret update <secret-id-or-name> ...`
-- Reveal secret: `koyeb secret reveal <secret-id-or-name>`
-- Delete secret: `koyeb secret delete <secret-id-or-name>`
+- List secrets: `koyeb secrets list`
+- Get secret: `koyeb secrets get <secret-name>`
+- Describe secret: `koyeb secrets describe <secret-name>`
+- Create secret: `koyeb secrets create <name> --value <value> [--type <type>]`
+- Update secret: `koyeb secrets update <secret-name> [flags]`
+- Reveal secret: `koyeb secrets reveal <secret-name>`
+- Delete secret: `koyeb secrets delete <secret-name>`
 
 ## Examples
 
-- Create a secret: `koyeb secret create DATABASE_URL --value "..."`
-- Reveal a secret: `koyeb secret reveal DATABASE_URL`
+- Create a secret: `koyeb secrets create DATABASE_URL --value "postgres://..."`
+- Reveal a secret: `koyeb secrets reveal DATABASE_URL`
+- List all secrets: `koyeb secrets list`
 
 ## References
 
+For detailed flags, see references/koyeb-secrets-flags.md.
+
 - references/koyeb-cli.md
+- references/koyeb-secrets-flags.md
 - references/koyeb-auth.md
 - references/koyeb-output.md
 - scripts/koyeb-cli.sh

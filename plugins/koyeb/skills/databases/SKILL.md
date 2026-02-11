@@ -27,20 +27,24 @@ Use this skill to create or manage databases associated with Koyeb apps or servi
 
 ## Commands
 
-- List databases: `koyeb database list`
-- Get database: `koyeb database get <database-id-or-name>`
-- Create database: `koyeb database create <name> ...`
-- Update database: `koyeb database update <database-id-or-name> ...`
-- Delete database: `koyeb database delete <database-id-or-name>`
+- List databases: `koyeb databases list`
+- Get database: `koyeb databases get <database-name>`
+- Create database: `koyeb databases create <name> [flags]`
+- Update database: `koyeb databases update <database-name> [flags]`
+- Delete database: `koyeb databases delete <database-name>`
 
 ## Examples
 
-- Create database: `koyeb database create my-db ...`
-- List databases: `koyeb database list`
+- Create database: `koyeb databases create my-db --app my-app --instance-type free --pg-version 16`
+- List databases: `koyeb databases list`
+- Get database details: `koyeb databases get my-db --app my-app`
 
 ## References
 
+For detailed flags, see references/koyeb-databases-flags.md.
+
 - references/koyeb-cli.md
+- references/koyeb-databases-flags.md
 - references/koyeb-auth.md
 - references/koyeb-output.md
 - scripts/koyeb-cli.sh

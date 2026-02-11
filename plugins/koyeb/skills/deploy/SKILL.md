@@ -28,19 +28,22 @@ Use this skill to deploy code or trigger redeploys for existing services.
 
 ## Commands
 
-- Deploy service: `koyeb service deploy <service-id-or-name> ...`
-- Redeploy service: `koyeb service redeploy <service-id-or-name>`
-- List deployments: `koyeb deployment list --service <service-id-or-name>`
-- Deployment logs: `koyeb deployment logs <deployment-id>`
+- Deploy a directory: `koyeb deploy <path> <app>/<service> [flags]`
+- Redeploy service: `koyeb services redeploy <service-name> [flags]`
+- List deployments: `koyeb deployments list --service <service-id-or-name>`
+- Deployment logs: `koyeb deployments logs <deployment-id>`
 
 ## Examples
 
-- Deploy a service: `koyeb service deploy my-service ...`
-- Redeploy a service: `koyeb service redeploy my-service`
+- Deploy a directory: `koyeb deploy ./dist my-app/my-service`
+- Redeploy a service: `koyeb services redeploy my-service --app my-app`
 
 ## References
 
+For detailed flags, see references/koyeb-deploy-flags.md.
+
 - references/koyeb-cli.md
+- references/koyeb-deploy-flags.md
 - references/koyeb-auth.md
 - references/koyeb-output.md
 - scripts/koyeb-cli.sh

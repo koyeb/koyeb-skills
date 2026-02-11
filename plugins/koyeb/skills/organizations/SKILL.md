@@ -27,17 +27,20 @@ Use this skill to list organizations or switch the active organization context.
 
 ## Commands
 
-- List organizations: `koyeb organization list`
-- Switch organization: `koyeb organization switch <org-id-or-name>`
+- List organizations: `koyeb organizations list`
+- Switch organization: `koyeb organizations switch [flags]`
 
 ## Examples
 
-- List organizations: `koyeb organization list`
-- Switch org: `koyeb organization switch my-org`
+- List organizations: `koyeb organizations list`
+- Switch org: `koyeb organizations switch`
 
 ## References
 
+For detailed flags, see references/koyeb-organizations-flags.md.
+
 - references/koyeb-cli.md
+- references/koyeb-organizations-flags.md
 - references/koyeb-auth.md
 - references/koyeb-output.md
 - scripts/koyeb-cli.sh

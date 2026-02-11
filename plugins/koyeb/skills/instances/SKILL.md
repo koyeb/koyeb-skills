@@ -27,21 +27,25 @@ Use this skill to inspect or interact with running instances, including exec, lo
 
 ## Commands
 
-- List instances: `koyeb instance list --service <service-id-or-name>`
-- Get instance: `koyeb instance get <instance-id>`
-- Describe instance: `koyeb instance describe <instance-id>`
-- Instance logs: `koyeb instance logs <instance-id>`
-- Exec command: `koyeb instance exec <instance-id> -- <command>`
-- Copy files: `koyeb instance cp <src> <instance-id>:<dest>`
+- List instances: `koyeb instances list [flags]`
+- Get instance: `koyeb instances get <instance-name>`
+- Describe instance: `koyeb instances describe <instance-name>`
+- Instance logs: `koyeb instances logs <instance-name> [flags]`
+- Exec command: `koyeb instances exec <instance-name> <cmd> -- [args...]`
+- Copy files: `koyeb instances cp <src> <dst>`
 
 ## Examples
 
-- List instances: `koyeb instance list --service my-service`
-- Exec into instance: `koyeb instance exec <instance-id> -- bash`
+- List instances: `koyeb instances list --service my-service`
+- Exec into instance: `koyeb instances exec <instance-id> /bin/bash`
+- Copy file from instance: `koyeb instances cp <instance-id>:/path/file.txt ./`
 
 ## References
 
+For detailed flags, see references/koyeb-instances-flags.md.
+
 - references/koyeb-cli.md
+- references/koyeb-instances-flags.md
 - references/koyeb-auth.md
 - references/koyeb-output.md
 - scripts/koyeb-cli.sh

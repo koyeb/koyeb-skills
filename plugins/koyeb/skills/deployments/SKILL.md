@@ -27,20 +27,24 @@ Use this skill to inspect or manage deployment history, logs, and cancellation.
 
 ## Commands
 
-- List deployments: `koyeb deployment list --service <service-id-or-name>`
-- Get deployment: `koyeb deployment get <deployment-id>`
-- Describe deployment: `koyeb deployment describe <deployment-id>`
-- Deployment logs: `koyeb deployment logs <deployment-id>`
-- Cancel deployment: `koyeb deployment cancel <deployment-id>`
+- List deployments: `koyeb deployments list [flags]`
+- Get deployment: `koyeb deployments get <deployment-name>`
+- Describe deployment: `koyeb deployments describe <deployment-name>`
+- Deployment logs: `koyeb deployments logs <deployment-name>`
+- Cancel deployment: `koyeb deployments cancel <deployment-name>`
 
 ## Examples
 
-- List deployments: `koyeb deployment list --service my-service`
-- Cancel a deployment: `koyeb deployment cancel <deployment-id>`
+- List deployments: `koyeb deployments list --service my-service`
+- Cancel a deployment: `koyeb deployments cancel <deployment-id>`
+- Show build logs: `koyeb deployments logs <deployment-id> --type build`
 
 ## References
 
+For detailed flags, see references/koyeb-deployments-flags.md.
+
 - references/koyeb-cli.md
+- references/koyeb-deployments-flags.md
 - references/koyeb-auth.md
 - references/koyeb-output.md
 - scripts/koyeb-cli.sh

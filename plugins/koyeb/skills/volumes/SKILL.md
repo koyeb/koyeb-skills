@@ -27,20 +27,24 @@ Use this skill to create or manage persistent volumes.
 
 ## Commands
 
-- List volumes: `koyeb volume list`
-- Get volume: `koyeb volume get <volume-id-or-name>`
-- Create volume: `koyeb volume create <name> ...`
-- Update volume: `koyeb volume update <volume-id-or-name> ...`
-- Delete volume: `koyeb volume delete <volume-id-or-name>`
+- List volumes: `koyeb volumes list`
+- Get volume: `koyeb volumes get <volume-name>`
+- Create volume: `koyeb volumes create <name> [flags]`
+- Update volume: `koyeb volumes update <volume-name> [flags]`
+- Delete volume: `koyeb volumes delete <volume-name>`
 
 ## Examples
 
-- Create volume: `koyeb volume create my-volume ...`
-- List volumes: `koyeb volume list`
+- Create volume: `koyeb volumes create my-volume --size 5Gi`
+- List volumes: `koyeb volumes list`
+- Get volume info: `koyeb volumes get my-volume`
 
 ## References
 
+For detailed flags, see references/koyeb-volumes-flags.md.
+
 - references/koyeb-cli.md
+- references/koyeb-volumes-flags.md
 - references/koyeb-auth.md
 - references/koyeb-output.md
 - scripts/koyeb-cli.sh

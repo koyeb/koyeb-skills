@@ -27,15 +27,18 @@ Use this skill to create archives that can be referenced by deployments.
 
 ## Commands
 
-- Create archive: `koyeb archive create <path>`
+- Create archive: `koyeb archives create <name> [flags]`
 
 ## Examples
 
-- Create an archive from a directory: `koyeb archive create ./dist`
+- Create an archive from a directory: `koyeb archives create ./dist --ignore-dir node_modules,build`
 
 ## References
 
+For detailed flags, see references/koyeb-archives-flags.md.
+
 - references/koyeb-cli.md
+- references/koyeb-archives-flags.md
 - references/koyeb-auth.md
 - references/koyeb-output.md
 - scripts/koyeb-cli.sh

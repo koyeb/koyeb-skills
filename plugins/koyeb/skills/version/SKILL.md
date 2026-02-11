@@ -28,5 +28,8 @@ Use this skill to check the installed Koyeb CLI version.
 
 ## References
 
+For detailed flags, see references/koyeb-version-flags.md.
+
 - references/koyeb-cli.md
+- references/koyeb-version-flags.md
 - scripts/koyeb-cli.sh

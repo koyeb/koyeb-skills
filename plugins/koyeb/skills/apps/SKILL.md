@@ -28,24 +28,29 @@ Use this skill when the user wants to create, update, pause, resume, delete, lis
 
 ## Commands
 
-- List apps: `koyeb app list`
-- Get app: `koyeb app get <app-id-or-name>`
-- Describe app: `koyeb app describe <app-id-or-name>`
-- Create app: `koyeb app create <name>`
-- Update app: `koyeb app update <app-id-or-name> ...`
-- Pause app: `koyeb app pause <app-id-or-name>`
-- Resume app: `koyeb app resume <app-id-or-name>`
-- Delete app: `koyeb app delete <app-id-or-name>`
+- List apps: `koyeb apps list`
+- Get app: `koyeb apps get <app-id-or-name>`
+- Describe app: `koyeb apps describe <app-id-or-name>`
+- Create app: `koyeb apps create <name>`
+- Create app and service: `koyeb apps init <name> [flags]`
+- Update app: `koyeb apps update <app-id-or-name> [flags]`
+- Pause app: `koyeb apps pause <app-id-or-name>`
+- Resume app: `koyeb apps resume <app-id-or-name>`
+- Delete app: `koyeb apps delete <app-id-or-name>`
 
 ## Examples
 
-- Create an app: `koyeb app create my-app`
-- Pause an app: `koyeb app pause my-app`
-- Get details: `koyeb app get my-app`
+- Create an app: `koyeb apps create my-app`
+- Pause an app: `koyeb apps pause my-app`
+- Get details: `koyeb apps get my-app`
+- Create app and service: `koyeb apps init my-app --docker nginx --port 8080:http`
 
 ## References
 
+For detailed flags, see references/koyeb-apps-flags.md.
+
 - references/koyeb-cli.md
+- references/koyeb-apps-flags.md
 - references/koyeb-auth.md
 - references/koyeb-output.md
 - scripts/koyeb-cli.sh

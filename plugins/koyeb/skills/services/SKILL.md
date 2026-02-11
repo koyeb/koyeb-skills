@@ -28,28 +28,31 @@ Use this skill to create or manage Koyeb services, including logs, exec, and lif
 
 ## Commands
 
-- List services: `koyeb service list`
-- Get service: `koyeb service get <service-id-or-name>`
-- Describe service: `koyeb service describe <service-id-or-name>`
-- Create service: `koyeb service create <app-id-or-name> ...`
-- Update service: `koyeb service update <service-id-or-name> ...`
-- Delete service: `koyeb service delete <service-id-or-name>`
-- Pause service: `koyeb service pause <service-id-or-name>`
-- Resume service: `koyeb service resume <service-id-or-name>`
-- Redeploy service: `koyeb service redeploy <service-id-or-name>`
-- Logs: `koyeb service logs <service-id-or-name>`
-- Exec in instance context: `koyeb service exec <service-id-or-name> ...`
-- Unapplied changes: `koyeb service unapplied-changes <service-id-or-name>`
+- List services: `koyeb services list [flags]`
+- Get service: `koyeb services get <service-name> --app <app-name>`
+- Describe service: `koyeb services describe <service-name> --app <app-name>`
+- Create service: `koyeb services create <service-name> --app <app-name> [flags]`
+- Update service: `koyeb services update <service-name> --app <app-name> [flags]`
+- Delete service: `koyeb services delete <service-name> --app <app-name>`
+- Pause service: `koyeb services pause <service-name> --app <app-name>`
+- Resume service: `koyeb services resume <service-name> --app <app-name>`
+- Redeploy service: `koyeb services redeploy <service-name> --app <app-name>`
+- Logs: `koyeb services logs <service-name> --app <app-name>`
+- Exec command: `koyeb services exec <service-name> <cmd> -- [args...] --app <app-name>`
+- Unapplied changes: `koyeb services unapplied-changes <service-name> --app <app-name>`
 
 ## Examples
 
-- Create service: `koyeb service create my-app ...`
-- Tail logs: `koyeb service logs my-service`
-- Exec a command: `koyeb service exec my-service -- ls -la`
+- Create service: `koyeb services create my-service --app my-app --docker nginx --port 8080:http`
+- Tail logs: `koyeb services logs my-service --app my-app`
+- Exec a command: `koyeb services exec my-service bash -- --app my-app`
 
 ## References
 
+For detailed flags, see references/koyeb-services-flags.md.
+
 - references/koyeb-cli.md
+- references/koyeb-services-flags.md
 - references/koyeb-auth.md
 - references/koyeb-output.md
 - scripts/koyeb-cli.sh

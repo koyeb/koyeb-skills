@@ -27,23 +27,27 @@ Use this skill to manage domain resources and attach or detach domains from serv
 
 ## Commands
 
-- List domains: `koyeb domain list`
-- Get domain: `koyeb domain get <domain-id-or-name>`
-- Describe domain: `koyeb domain describe <domain-id-or-name>`
-- Create domain: `koyeb domain create <domain-name>`
-- Delete domain: `koyeb domain delete <domain-id-or-name>`
-- Attach domain: `koyeb domain attach <domain-id-or-name> --service <service-id-or-name>`
-- Detach domain: `koyeb domain detach <domain-id-or-name> --service <service-id-or-name>`
-- Refresh domain: `koyeb domain refresh <domain-id-or-name>`
+- List domains: `koyeb domains list`
+- Get domain: `koyeb domains get <domain-name>`
+- Describe domain: `koyeb domains describe <domain-name>`
+- Create domain: `koyeb domains create <domain-name> [flags]`
+- Delete domain: `koyeb domains delete <domain-name>`
+- Attach domain: `koyeb domains attach <domain-name> <app-name>`
+- Detach domain: `koyeb domains detach <domain-name>`
+- Refresh domain: `koyeb domains refresh <domain-name>`
 
 ## Examples
 
-- Create a domain: `koyeb domain create example.com`
-- Attach a domain: `koyeb domain attach example.com --service my-service`
+- Create a domain: `koyeb domains create example.com`
+- Attach a domain to an app: `koyeb domains attach example.com my-app`
+- List all domains: `koyeb domains list`
 
 ## References
 
+For detailed flags, see references/koyeb-domains-flags.md.
+
 - references/koyeb-cli.md
+- references/koyeb-domains-flags.md
 - references/koyeb-auth.md
 - references/koyeb-output.md
 - scripts/koyeb-cli.sh
