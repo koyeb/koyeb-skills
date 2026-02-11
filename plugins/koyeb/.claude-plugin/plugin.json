@@ -1,0 +1,8 @@
+{
+  "name": "koyeb-skills",
+  "version": "1.0.0",
+  "description": "Koyeb agent skills",
+  "skills": [
+    "skills"
+  ]
+}
