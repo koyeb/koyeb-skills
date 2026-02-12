@@ -4,12 +4,6 @@ Agent skills for Koyeb, following the Agent Skills open format.
 
 ## Installation
 
-### Add via skills CLI
-
-```bash
-npx skills add koyeb/koyeb-skills
-```
-
 This allows you to pick and choose which skills to install. Re-run to update.
 
 ### Manual install
@@ -26,12 +20,21 @@ Supports any Agent Skills-compatible product. See Agent Skills docs for product-
 
 The skills are authored in the Agent Skills open format. For VS Code, Cursor, Codex, Mistral Vibe, Claude Code, and OpenCode, install via one of the following:
 
-- **Skills CLI (where supported):**
-	- `npx skills add koyeb/koyeb-skills`
 - **Manual install:**
 	- Copy [plugins/koyeb/skills](plugins/koyeb/skills) into the tool’s skills directory.
 
 If a tool uses a custom skills directory or import flow, follow its product documentation and point it at [plugins/koyeb/skills](plugins/koyeb/skills).
+
+<details>
+<summary>Local skills copies for different agents</summary>
+
+Copy `plugins/railway/skills/` to your agent's skills directory:
+- Claude: `~/.claude/skills/`
+- Codex: `~/.codex/skills/`
+- OpenCode: `~/.config/opencode/skill/`
+- Cursor: `~/.cursor/skills/`
+</details>
+
 
 ## Available Skills
 
