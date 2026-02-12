@@ -66,12 +66,14 @@ koyeb services create NAME [flags]
 - `--git-sha string` - Commit SHA to deploy
 - `--git-workdir string` - Subdirectory containing code
 - `--instance-type string` - Instance type (default: "nano")
+    - See [plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md](plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md) for available instance types by region.
 - `--max-scale int` - Max replicas (default: 1)
 - `--min-scale int` - Min replicas (default: 1)
 - `--ports strings` - Port mappings (format: `PORT[:PROTOCOL]`)
 - `--privileged` - Run in privileged mode
 - `--proxy-ports strings` - Proxy ports (format: `PORT[:PROTOCOL]`)
 - `--regions strings` - Deploy regions (can repeat)
+    - See [plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md](plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md) for available regions by instance type.
 - `--routes strings` - Routes (format: `PATH[:PORT]`)
 - `--scale int` - Set min and max scale (default: 1)
 - `--skip-cache` - Skip build cache

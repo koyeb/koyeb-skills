@@ -22,6 +22,17 @@ plugins/koyeb/skills/
 
 Supports any Agent Skills-compatible product. See Agent Skills docs for product-specific install locations.
 
+## Editor & agent integrations
+
+The skills are authored in the Agent Skills open format. For VS Code, Cursor, Codex, Mistral Vibe, Claude Code, and OpenCode, install via one of the following:
+
+- **Skills CLI (where supported):**
+	- `npx skills add koyeb/koyeb-skills`
+- **Manual install:**
+	- Copy [plugins/koyeb/skills](plugins/koyeb/skills) into the tool’s skills directory.
+
+If a tool uses a custom skills directory or import flow, follow its product documentation and point it at [plugins/koyeb/skills](plugins/koyeb/skills).
+
 ## Available Skills
 
 - apps
