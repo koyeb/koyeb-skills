@@ -34,6 +34,8 @@ Supports any Agent Skills-compatible product. See Agent Skills docs for product-
 - deployments
 - instances
 - databases
+- sandboxes-js-sdk
+- sandboxes-python-sdk
 - version
 - volumes
 
