@@ -31,11 +31,11 @@ Parameters (with defaults):
 - `name: str = "quick-sandbox"`
 - `wait_ready: bool = True`
 - `instance_type: str = "micro"`
-	- See [plugins/koyeb/skills/_shared/references/koyeb-sandbox-regions-instance-types.md](plugins/koyeb/skills/_shared/references/koyeb-sandbox-regions-instance-types.md) for available instance types by region.
+	- See [plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md](plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md) for available instance types by region.
 - `exposed_port_protocol: Optional[str] = None` ("http" or "http2")
 - `env: Optional[Dict[str, str]] = None`
 - `region: Optional[str] = None` (default region noted in docstring: "na")
-	- See [plugins/koyeb/skills/_shared/references/koyeb-sandbox-regions-instance-types.md](plugins/koyeb/skills/_shared/references/koyeb-sandbox-regions-instance-types.md) for valid region IDs.
+	- See [plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md](plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md) for valid region IDs.
 - `api_token: Optional[str] = None` (uses `KOYEB_API_TOKEN` env var)
 - `timeout: int = 300`
 - `idle_timeout: int = 0`

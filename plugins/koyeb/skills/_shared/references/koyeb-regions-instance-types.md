@@ -1,8 +1,8 @@
-# Koyeb Sandbox Regions & Instance Types
+# Koyeb Regions & Instance Types
 
 Reference data from API response (captured 2026-02-12).
 
-Use this list for valid `region` and `instance_type` values in the Sandbox SDKs. Regions marked COMING_SOON are not currently available.
+Use this list for valid `region` and `instance_type` values for sandboxes and regular deployments (CLI and API). Regions marked COMING_SOON are not currently available.
 
 ## Regions
 

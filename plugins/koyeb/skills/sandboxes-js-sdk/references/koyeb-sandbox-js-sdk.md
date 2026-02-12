@@ -28,11 +28,11 @@ If no image is specified when creating a sandbox, Koyeb uses a default Ubuntu 22
 - `name: string`
 - `wait_ready: boolean`
 - `instance_type: string`
-	- See [plugins/koyeb/skills/_shared/references/koyeb-sandbox-regions-instance-types.md](plugins/koyeb/skills/_shared/references/koyeb-sandbox-regions-instance-types.md) for available instance types by region.
+	- See [plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md](plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md) for available instance types by region.
 - `exposed_port_protocol: 'http' | 'http2'`
 - `env: Record<string, string>`
 - `region: string`
-	- See [plugins/koyeb/skills/_shared/references/koyeb-sandbox-regions-instance-types.md](plugins/koyeb/skills/_shared/references/koyeb-sandbox-regions-instance-types.md) for valid region IDs.
+	- See [plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md](plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md) for valid region IDs.
 - `api_token: string`
 - `timeout: number`
 - `idle_timeout: number`
