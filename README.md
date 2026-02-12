@@ -35,6 +35,7 @@ If a tool uses a custom skills directory or import flow, follow its product docu
 
 ## Available Skills
 
+- setup
 - apps
 - archives
 - deploy
