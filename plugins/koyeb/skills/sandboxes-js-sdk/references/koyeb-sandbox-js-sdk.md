@@ -11,7 +11,7 @@ Package: `@koyeb/sandbox-sdk` (inspected v1.0.7)
 
 Reference: https://www.koyeb.com/docs/sandboxes/sandbox-default-image
 
-If no image is specified when creating a sandbox, Koyeb uses a default Ubuntu 22.04–based image with common tools preinstalled, including system utilities (curl, wget, git, jq, zip/unzip, file, procps, ca-certificates), language runtimes/toolchains (Node.js, Python, Go, Ruby, Rust, Elixir/Erlang, Java, Bun, Deno), and AI tooling (Mistral Vibe, Codex, Gemini, OpenCode).
+If no image is specified when creating a sandbox, Koyeb uses a default Ubuntu 22.04–based image with common tools preinstalled, including system utilities (curl, wget, git, jq, zip/unzip, file, procps, ca-certificates), language runtimes/toolchains (Node.js, Python3, Go, Ruby, Rust, Elixir/Erlang, Java, Bun, Deno), and AI tooling (Mistral Vibe, Codex, Gemini, OpenCode).
 
 ## Exports
 
@@ -77,7 +77,9 @@ HTTP helpers
 
 Command execution
 - `exec(cmd: string, opts?: { cwd?: string; env?: Record<string, string>; signal?: AbortSignal }): Promise<{ stdout: string; stderr: string; code: number }>`
+    - Note: use stderr and stdout to monitor outcomes of commands
 - `exec_stream(cmd: string, opts?: { cwd?: string; env?: Record<string, string>; signal?: AbortSignal }): SandboxExec`
+    - Note: use stderr and stdout to monitor outcomes of commands
 
 `SandboxExec` events:
 - `stdout`: `{ stream: 'stdout'; data: string }`

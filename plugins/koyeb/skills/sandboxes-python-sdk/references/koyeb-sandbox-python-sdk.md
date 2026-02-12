@@ -10,7 +10,7 @@ Package: `koyeb-sdk` (inspected v1.2.2)
 
 Reference: https://www.koyeb.com/docs/sandboxes/sandbox-default-image
 
-If no image is specified when creating a sandbox, Koyeb uses a default Ubuntu 22.04–based image with common tools preinstalled, including system utilities (curl, wget, git, jq, zip/unzip, file, procps, ca-certificates), language runtimes/toolchains (Node.js, Python, Go, Ruby, Rust, Elixir/Erlang, Java, Bun, Deno), and AI tooling (Mistral Vibe, Codex, Gemini, OpenCode).
+If no image is specified when creating a sandbox, Koyeb uses a default Ubuntu 22.04–based image with common tools preinstalled, including system utilities (curl, wget, git, jq, zip/unzip, file, procps, ca-certificates), language runtimes/toolchains (Node.js, Python3, Go, Ruby, Rust, Elixir/Erlang, Java, Bun, Deno), and AI tooling (Mistral Vibe, Codex, Gemini, OpenCode).
 
 ## Exports
 
@@ -73,6 +73,10 @@ Processes
 - `list_processes() -> List[ProcessInfo]`
 - `kill_all_processes() -> int`
 
+Command execution
+- `exec(command: str, cwd: Optional[str] = None, env: Optional[Dict[str, str]] = None, timeout: int = 30, on_stdout: Optional[Callable[[str], None]] = None, on_stderr: Optional[Callable[[str], None]] = None) -> CommandResult`
+    - Note: use on_sterr and on_stdout to monitor progress, especially on long processes. Alternatively, store the result and use .stderr and .stdout to get feedback.
+
 `ProcessInfo` fields:
 - `id: str`
 - `command: str`
@@ -91,9 +95,39 @@ Interfaces
 `AsyncSandbox.create(...) -> AsyncSandbox` (same parameters as sync)
 `AsyncSandbox.get_from_id(id: str, api_token: Optional[str] = None) -> AsyncSandbox`
 
+## Async Sandbox instance methods
+
+Lifecycle and status
+- `wait_ready(timeout: int = DEFAULT_INSTANCE_WAIT_TIMEOUT, poll_interval: float = DEFAULT_POLL_INTERVAL) -> bool`
+- `wait_tcp_proxy_ready(timeout: int = DEFAULT_INSTANCE_WAIT_TIMEOUT, poll_interval: float = DEFAULT_POLL_INTERVAL) -> bool`
+- `is_healthy() -> bool`
+- `delete() -> None`
+- `update_lifecycle(delete_after_delay: Optional[int] = None, delete_after_inactivity: Optional[int] = None) -> None`
+
+Networking
+- `get_domain() -> Optional[str]`
+- `get_tcp_proxy_info() -> Optional[tuple[str, int]]`
+- `get_sandbox_url() -> Optional[str]` (internal helper)
+- `expose_port(port: int) -> ExposedPort`
+- `unexpose_port() -> None`
+
+Processes
+- `launch_process(cmd: str, cwd: Optional[str] = None, env: Optional[Dict[str, str]] = None) -> str`
+- `kill_process(process_id: str) -> None`
+- `list_processes() -> List[ProcessInfo]`
+- `kill_all_processes() -> int`
+
+Command execution
+- `exec(command: str, cwd: Optional[str] = None, env: Optional[Dict[str, str]] = None, timeout: int = 30, on_stdout: Optional[Callable[[str], None]] = None, on_stderr: Optional[Callable[[str], None]] = None) -> CommandResult`
+
+Interfaces
+- `filesystem: AsyncSandboxFilesystem`
+- `exec: AsyncSandboxExecutor`
+
 ## Command execution (`SandboxExecutor`)
 
 `SandboxExecutor.__call__(command: str, cwd: Optional[str] = None, env: Optional[Dict[str, str]] = None, timeout: int = 30, on_stdout: Optional[Callable[[str], None]] = None, on_stderr: Optional[Callable[[str], None]] = None) -> CommandResult`
+    - Note: use on_sterr and on_stdout to monitor progress, especially on long processes. Alternatively, store the result and use .stderr and .stdout to get feedback.
 
 Async: `AsyncSandboxExecutor.__call__(...) -> CommandResult`
 
@@ -109,7 +143,7 @@ Async: `AsyncSandboxExecutor.__call__(...) -> CommandResult`
 ## Filesystem (`SandboxFilesystem`)
 
 - `write_file(path: str, content: Union[str, bytes], encoding: str = "utf-8") -> None`
-	- Note: `write_file` and `write_files` require the parent directory to exist. Use `mkdir` before writing to new directories.
+	- Note: `write_file` requires the parent directory to exist. Use `mkdir` before writing to new directories.
 - `read_file(path: str, encoding: str = "utf-8") -> FileInfo`
 - `mkdir(path: str) -> None`
 - `list_dir(path: str = ".") -> List[str]`
@@ -123,6 +157,7 @@ Async: `AsyncSandboxExecutor.__call__(...) -> CommandResult`
 - `is_dir(path: str) -> bool`
 - `rm(path: str, recursive: bool = False) -> None`
 - `upload_file(local_path: str, remote_path: str) -> None`
+    - Note: `upload_file` requires the parent directory for the remote_path to exist. Use `mkdir` before uploading to new directories.
 - `download_file(local_path: str, remote_path: str) -> None`
 
 `open(path: str, mode: str = "r", encoding: str = "utf-8") -> SandboxFileIO`
@@ -131,6 +166,7 @@ Async: `AsyncSandboxExecutor.__call__(...) -> CommandResult`
 
 Async equivalents:
 - `write_file(path: str, content: Union[str, bytes], encoding: str = "utf-8") -> None`
+	- Note: `write_file` requires the parent directory to exist. Use `mkdir` before writing to new directories.
 - `read_file(path: str, encoding: str = "utf-8") -> FileInfo`
 - `mkdir(path: str) -> None`
 - `list_dir(path: str = ".") -> List[str]`
@@ -143,6 +179,7 @@ Async equivalents:
 - `is_file(path: str) -> bool`
 - `is_dir(path: str) -> bool`
 - `upload_file(local_path: str, remote_path: str, encoding: str = "utf-8") -> None`
+    - Note: `upload_file` requires the parent directory for the remote_path to exist. Use `mkdir` before uploading to new directories.
 - `download_file(remote_path: str, local_path: str, encoding: str = "utf-8") -> None`
 - `ls(path: str = ".") -> List[str]`
 - `rm(path: str, recursive: bool = False) -> None`
