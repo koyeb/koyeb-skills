@@ -27,12 +27,16 @@ koyeb deploy <path> <app>/<service> [flags]
 - `--checks strings` - Health checks (format: `PORT:http:PATH` or `PORT:tcp`)
 - `--checks-grace-period strings` - Health check grace period (format: `PORT=seconds`)
 - `--config-file strings` - Config files to copy (format: `LOCAL:REMOTE[:PERMS]`)
+- `--deep-sleep-delay` — Duration after which an idle service enters deep sleep (e.g., --deep-sleep-delay 30m)
+    - Note: Set either `--light-sleep-delay` or `--deep-sleep-delay` to 0 to disable that sleep mode.
 - `--deployment-strategy string` - Strategy: "rolling", "blue-green", or "immediate"
 - `--delete-after-delay duration` - Auto-delete after duration (e.g., 1h, 30m)
 - `--delete-after-inactivity-delay duration` - Auto-delete after inactivity (e.g., 1h, 30m)
 - `--env strings` - Environment variables (format: `KEY=VALUE` or `{{secret.name}}`)
 - `--instance-type string` - Instance type (default: "nano")
     - See [plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md](plugins/koyeb/skills/_shared/references/koyeb-regions-instance-types.md) for available instance types by region.
+- `--light-sleep-delay` — Duration after which an idle service enters light sleep (e.g., --light-sleep-delay 5m)
+    - Note: Set either `--light-sleep-delay` or `--deep-sleep-delay` to 0 to disable that sleep mode.
 - `--max-scale int` - Max replicas (default: 1)
 - `--min-scale int` - Min replicas (default: 1)
 - `--ports strings` - Port mappings (format: `PORT[:PROTOCOL]`)

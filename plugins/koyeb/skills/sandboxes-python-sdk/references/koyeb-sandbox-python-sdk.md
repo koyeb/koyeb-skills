@@ -39,6 +39,7 @@ Parameters (with defaults):
 - `api_token: Optional[str] = None` (uses `KOYEB_API_TOKEN` env var)
 - `timeout: int = 300`
 - `idle_timeout: int = 0`
+    - Note: set to 0 if you don't want the sandbox to ever go to sleep. When you wake it back up, it will be back to its default state.
 - `enable_tcp_proxy: bool = False`
 - `privileged: bool = False`
 - `registry_secret: Optional[str] = None`
@@ -157,7 +158,7 @@ Async: `AsyncSandboxExecutor.__call__(...) -> CommandResult`
 - `is_dir(path: str) -> bool`
 - `rm(path: str, recursive: bool = False) -> None`
 - `upload_file(local_path: str, remote_path: str) -> None`
-    - Note: `upload_file` requires the parent directory for the remote_path to exist. Use `mkdir` before uploading to new directories.
+    - Note: `upload_file` requires the parent directory for the remote_path to exist. You must use `mkdir` before uploading to new directories.
 - `download_file(local_path: str, remote_path: str) -> None`
 
 `open(path: str, mode: str = "r", encoding: str = "utf-8") -> SandboxFileIO`
@@ -166,7 +167,7 @@ Async: `AsyncSandboxExecutor.__call__(...) -> CommandResult`
 
 Async equivalents:
 - `write_file(path: str, content: Union[str, bytes], encoding: str = "utf-8") -> None`
-	- Note: `write_file` requires the parent directory to exist. Use `mkdir` before writing to new directories.
+	- Note: `write_file` requires the parent directory to exist. You must use `mkdir` before writing to new directories.
 - `read_file(path: str, encoding: str = "utf-8") -> FileInfo`
 - `mkdir(path: str) -> None`
 - `list_dir(path: str = ".") -> List[str]`
@@ -179,7 +180,7 @@ Async equivalents:
 - `is_file(path: str) -> bool`
 - `is_dir(path: str) -> bool`
 - `upload_file(local_path: str, remote_path: str, encoding: str = "utf-8") -> None`
-    - Note: `upload_file` requires the parent directory for the remote_path to exist. Use `mkdir` before uploading to new directories.
+    - Note: `upload_file` requires the parent directory for the remote_path to exist. You must use `mkdir` before uploading to new directories.
 - `download_file(remote_path: str, local_path: str, encoding: str = "utf-8") -> None`
 - `ls(path: str = ".") -> List[str]`
 - `rm(path: str, recursive: bool = False) -> None`
@@ -241,6 +242,7 @@ asyncio.run(main())
 
 ```python
 fs = sandbox.filesystem
+fs.mkdir("/tmp")
 fs.write_file("/tmp/hello.txt", "Hello from Python")
 info = fs.read_file("/tmp/hello.txt")
 print(info.content)
