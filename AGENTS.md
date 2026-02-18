@@ -6,7 +6,7 @@ These skills provide step-by-step guidance for managing Koyeb resources with the
 
 ### CLI skills
 - Koyeb CLI installed and available on PATH
-- Authenticated session (`koyeb login`) or `KOYEB_TOKEN` set
+- Authenticated session (`koyeb login`) or `KOYEB_API_TOKEN` set
 - Network access to Koyeb APIs
 
 ### Sandbox SDK skills

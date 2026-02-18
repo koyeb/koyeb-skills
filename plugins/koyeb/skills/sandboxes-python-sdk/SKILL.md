@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires Python, pip, and network access.
 metadata:
   author: koyeb
-  version: "1.0"
+  version: "0.0.1"
 ---
 
 # Koyeb Sandboxes (Python SDK)
@@ -23,7 +23,7 @@ Use this skill when the user asks to manage Koyeb sandboxes from Python using th
 ## Workflow
 
 1. Install the SDK package.
-2. Configure authentication using `KOYEB_TOKEN`.
+2. Configure authentication using `KOYEB_API_TOKEN`.
 3. Create, start, or stop sandboxes as needed.
 4. Execute commands or retrieve logs/status through the SDK.
 5. Clean up sandboxes when finished.
@@ -31,7 +31,7 @@ Use this skill when the user asks to manage Koyeb sandboxes from Python using th
 ## Examples
 
 - Install the SDK: `pip install koyeb-sdk`
-- Use token auth: set `KOYEB_TOKEN` in your environment
+- Use token auth: set `KOYEB_API_TOKEN` in your environment
 
 ## References
 

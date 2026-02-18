@@ -6,7 +6,7 @@ This skill targets the latest available Koyeb CLI.
 
 Use one of:
 - `koyeb login`
-- `KOYEB_TOKEN` environment variable
+- `KOYEB_API_TOKEN` environment variable
 
 ## Common patterns
 

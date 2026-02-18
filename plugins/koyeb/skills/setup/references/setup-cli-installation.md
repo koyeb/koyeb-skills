@@ -51,7 +51,7 @@ Follows OAuth flow to generate and store your API token locally.
 Export your API token to skip interactive login:
 
 ```bash
-export KOYEB_TOKEN="your-api-token-here"
+export KOYEB_API_TOKEN="your-api-token-here"
 ```
 
 Get your token at: https://app.koyeb.com/settings/api
