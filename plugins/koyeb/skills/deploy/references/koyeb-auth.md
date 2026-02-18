@@ -8,7 +8,7 @@ koyeb login
 
 ## API token
 
-Set `KOYEB_TOKEN` in your environment to authenticate non-interactively.
+Set `KOYEB_API_TOKEN` in your environment to authenticate non-interactively.
 
 ## Organization context
 
