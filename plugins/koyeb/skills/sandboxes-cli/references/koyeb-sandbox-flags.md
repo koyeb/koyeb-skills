@@ -46,9 +46,9 @@ Global flags apply to all Koyeb CLI commands:
 
 ### `create`
 
-Usage: `koyeb sandbox create NAME [flags]`
+Usage: `koyeb sandbox create SANDBOXNAME --app APPNAME [flags]`
 
-- `-a, --app string`: Sandbox application
+- `-a, --app string`: (REQUIRED) Sandbox application name
 - `--config-file strings`: Config files (LOCAL:REMOTE:PERMS)
 - `--deep-sleep-delay duration`: Delay after which an idle service is put to deep sleep (e.g., `5m`, `30m`, `1h`), 0 to disable
 - `--delete-after-delay duration`: Auto-delete after duration (e.g., `24h`)
@@ -70,51 +70,52 @@ Usage: `koyeb sandbox create NAME [flags]`
 
 ### `expose-port`
 
-Usage: `koyeb sandbox expose-port NAME PORT [flags]`
+Usage: `koyeb sandbox expose-port SANDBOXNAME/APPNAME PORT [flags]`
 
 - `-h, --help`: help for expose-port
 
 ### `fs`
 
-Usage: `koyeb sandbox fs [command]`
+Usage: `koyeb sandbox fs [command] SANDBOXNAME/APPNAME`
 
 Filesystem subcommands:
 
 #### `fs download`
 
-Usage: `koyeb sandbox fs download NAME REMOTE_PATH LOCAL_PATH [flags]`
+Usage: `koyeb sandbox fs download SANDBOXNAME/APPNAME REMOTE_PATH LOCAL_PATH [flags]`
 
 - `-h, --help`: help for download
 
 #### `fs ls`
 
-Usage: `koyeb sandbox fs ls NAME [PATH] [flags]`
+Usage: `koyeb sandbox fs ls SANDBOXNAME/APPNAME [PATH] [flags]`
 
 - `-h, --help`: help for ls
 - `-l, --long`: Use long listing format with details
 
 #### `fs mkdir`
 
-Usage: `koyeb sandbox fs mkdir NAME PATH [flags]`
+Usage: `koyeb sandbox fs mkdir SANDBOXNAME/APPNAME PATH [flags]`
 
 - `-h, --help`: help for mkdir
 
 #### `fs read`
 
-Usage: `koyeb sandbox fs read NAME PATH [flags]`
+Usage: `koyeb sandbox fs read SANDBOXNAME/APPNAME PATH [flags]`
 
 - `-h, --help`: help for read
 
 #### `fs rm`
 
-Usage: `koyeb sandbox fs rm NAME PATH [flags]`
+Usage: `koyeb sandbox fs rm SANDBOXNAME/APPNAME PATH [flags]`
 
 - `-h, --help`: help for rm
 - `-r, --recursive`: Remove directories recursively
 
 #### `fs upload`
 
-Usage: `koyeb sandbox fs upload NAME LOCAL_PATH REMOTE_PATH [flags]`
+You must make a directory using `fs mkdir` before you can updload to it. All directories must exist first.
+Usage: `koyeb sandbox fs upload SANDBOXNAME/APPNAME LOCAL_PATH REMOTE_PATH [flags]`
 
 - `-f, --force`: Overwrite existing remote directory
 - `-h, --help`: help for upload
@@ -122,20 +123,21 @@ Usage: `koyeb sandbox fs upload NAME LOCAL_PATH REMOTE_PATH [flags]`
 
 #### `fs write`
 
-Usage: `koyeb sandbox fs write NAME PATH [CONTENT] [flags]`
+You must make a directory using `fs mkdir` before you can write to any files in the directory. All directories must exist first.
+Usage: `koyeb sandbox fs write SANDBOXNAME/APPNAME PATH [CONTENT] [flags]`
 
 - `-f, --file string`: Read content from local file
 - `-h, --help`: help for write
 
 ### `health`
 
-Usage: `koyeb sandbox health NAME [flags]`
+Usage: `koyeb sandbox health SANDBOXNAME/APPNAME [flags]`
 
 - `-h, --help`: help for health
 
 ### `kill`
 
-Usage: `koyeb sandbox kill NAME PROCESS_ID [flags]`
+Usage: `koyeb sandbox kill SANDBOXNAME/APPNAME PROCESS_ID [flags]`
 
 - `-h, --help`: help for kill
 
@@ -149,14 +151,14 @@ Usage: `koyeb sandbox list [flags]`
 
 ### `logs`
 
-Usage: `koyeb sandbox logs NAME PROCESS_ID [flags]`
+Usage: `koyeb sandbox logs SANDBOXNAME/APPNAME PROCESS_ID [flags]`
 
 - `-f, --follow`: Follow log output (like tail -f)
 - `-h, --help`: help for logs
 
 ### `ps`
 
-Usage: `koyeb sandbox ps NAME [flags]`
+Usage: `koyeb sandbox ps SANDBOXNAME/APPNAME [flags]`
 
 - `-h, --help`: help for ps
 
@@ -164,7 +166,7 @@ Aliases: `ps`, `list-processes`
 
 ### `run`
 
-Usage: `koyeb sandbox run NAME COMMAND [ARGS...] [flags]`
+Usage: `koyeb sandbox run SANDBOXNAME/APPNAME COMMAND [ARGS...] [flags]`
 
 - `--cwd string`: Working directory for the command
 - `--env strings`: Environment variables (KEY=VALUE)
@@ -174,7 +176,7 @@ Usage: `koyeb sandbox run NAME COMMAND [ARGS...] [flags]`
 
 ### `start`
 
-Usage: `koyeb sandbox start NAME COMMAND [ARGS...] [flags]`
+Usage: `koyeb sandbox start SANDBOXNAME/APPNAME COMMAND [ARGS...] [flags]`
 
 - `--cwd string`: Working directory for the process
 - `--env strings`: Environment variables (KEY=VALUE)
@@ -184,7 +186,7 @@ Aliases: `start`, `launch`
 
 ### `unexpose-port`
 
-Usage: `koyeb sandbox unexpose-port NAME [flags]`
+Usage: `koyeb sandbox unexpose-port SANDBOXNAME/APPNAME [flags]`
 
 - `-h, --help`: help for unexpose-port
 

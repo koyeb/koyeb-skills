@@ -29,24 +29,24 @@ Use this skill to interact with Koyeb sandboxes created via `koyeb service creat
 
 ## Commands
 
-- Create sandbox: `koyeb sandbox create [flags]`
-- List sandboxes: `koyeb sandbox list [flags]`
-- Check health: `koyeb sandbox health <sandbox-id> [flags]`
-- Run command: `koyeb sandbox run <sandbox-id> -- <command> [args...]`
-- Start process: `koyeb sandbox start <sandbox-id> -- <command> [args...]`
-- List processes: `koyeb sandbox ps <sandbox-id> [flags]`
-- Kill process: `koyeb sandbox kill <sandbox-id> <pid> [flags]`
-- Stream logs: `koyeb sandbox logs <sandbox-id> <pid> [flags]`
-- Filesystem operations: `koyeb sandbox fs <sandbox-id> <subcommand> [flags]`
-- Expose port: `koyeb sandbox expose-port <sandbox-id> <port> [flags]`
-- Unexpose port: `koyeb sandbox unexpose-port <sandbox-id> [flags]`
+- Create sandbox: `koyeb sandbox create SANDBOXNAME --app APPNAME [flags]`
+- List sandboxes: `koyeb sandbox list SANDBOXNAME/APPNAME[flags]`
+- Check health: `koyeb sandbox health SANDBOXNAME/APPNAME [flags]`
+- Run command: `koyeb sandbox run SANDBOXNAME/APPNAME -- <command> [args...]`
+- Start process: `koyeb sandbox start SANDBOXNAME/APPNAME -- <command> [args...]`
+- List processes: `koyeb sandbox ps SANDBOXNAME/APPNAME [flags]`
+- Kill process: `koyeb sandbox kill SANDBOXNAME/APPNAME <pid> [flags]`
+- Stream logs: `koyeb sandbox logs SANDBOXNAME/APPNAME <pid> [flags]`
+- Filesystem operations: `koyeb sandbox fs SANDBOXNAME/APPNAME <subcommand> [flags]`
+- Expose port: `koyeb sandbox expose-port SANDBOXNAME/APPNAME <port> [flags]`
+- Unexpose port: `koyeb sandbox unexpose-port SANDBOXNAME/APPNAME [flags]`
 
 ## Examples
 
 - Create a sandbox: `koyeb sandbox create --name my-sandbox`
-- Run a command: `koyeb sandbox run <sandbox-id> -- ls -la`
-- Start a background process: `koyeb sandbox start <sandbox-id> -- python app.py`
-- Expose a port: `koyeb sandbox expose-port <sandbox-id> 8080`
+- Run a command: `koyeb sandbox run SANDBOXNAME/APPNAME -- ls -la`
+- Start a background process: `koyeb sandbox start SANDBOXNAME/APPNAME -- python app.py`
+- Expose a port: `koyeb sandbox expose-port SANDBOXNAME/APPNAME 8080`
 
 ## References
 
