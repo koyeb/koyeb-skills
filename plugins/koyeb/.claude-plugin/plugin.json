@@ -14,6 +14,7 @@
     "deployments",
     "instances",
     "databases",
+    "sandboxes-cli",
     "sandboxes-js-sdk",
     "sandboxes-python-sdk",
     "version",
