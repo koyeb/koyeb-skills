@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires the Koyeb CLI.
 metadata:
   author: koyeb
-  version: "0.0.1"
+  version: "0.0.2"
 ---
 
 # Koyeb CLI Version

@@ -1,6 +1,6 @@
 {
   "name": "koyeb-skills",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Koyeb agent skills for CLI and Sandbox SDKs",
   "skills": [
     "setup",
@@ -14,6 +14,7 @@
     "deployments",
     "instances",
     "databases",
+    "sandboxes-cli",
     "sandboxes-js-sdk",
     "sandboxes-python-sdk",
     "version",
