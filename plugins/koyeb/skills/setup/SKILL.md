@@ -5,7 +5,7 @@ license: MIT
 compatibility: Multi-platform (macOS, Linux, Windows). Requires package manager (npm, pip) and internet access.
 metadata:
   author: koyeb
-  version: "0.0.1"
+  version: "0.0.2"
 ---
 
 # Koyeb Setup

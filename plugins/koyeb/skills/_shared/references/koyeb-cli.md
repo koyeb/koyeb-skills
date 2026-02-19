@@ -1,6 +1,6 @@
 # Koyeb CLI Reference
 
-This skill targets the latest available Koyeb CLI.
+This skill targets Koyeb CLI v.5.9.1
 
 ## Authentication
 
