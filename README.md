@@ -28,7 +28,7 @@ If a tool uses a custom skills directory or import flow, follow its product docu
 <details>
 <summary>Local skills copies for different agents</summary>
 
-Copy `plugins/railway/skills/` to your agent's skills directory:
+Copy `plugins/koyeb/skills/` to your agent's skills directory:
 - Claude: `~/.claude/skills/`
 - Codex: `~/.codex/skills/`
 - OpenCode: `~/.config/opencode/skill/`
