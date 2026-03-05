@@ -100,6 +100,7 @@ koyeb-skills/
 Shared files live in `plugins/koyeb/skills/_shared/`. After editing shared files, run:
 
 ```bash
+chmod +x ./scripts/sync-shared.sh
 ./scripts/sync-shared.sh
 ```
 
