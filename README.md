@@ -28,12 +28,32 @@ If a tool uses a custom skills directory or import flow, follow its product docu
 <details>
 <summary>Local skills copies for different agents</summary>
 
-Copy `plugins/koyeb/skills/` to your agent's skills directory:
+Copy `plugins/koyeb/skills/` to your agent’s skills directory:
 - Claude: `~/.claude/skills/`
 - Codex: `~/.codex/skills/`
 - OpenCode: `~/.config/opencode/skill/`
 - Cursor: `~/.cursor/skills/`
 </details>
+
+### Claude Code: refresh-koyeb-skills
+
+`scripts/refresh-koyeb-skills.sh` syncs all skills from this repo into `~/.claude/skills/` and updates `~/.claude/CLAUDE.md` so Claude always knows which skills are available.
+
+**One-time setup** — symlink the script so it’s available as a shell command:
+
+```bash
+ln -sf "$(pwd)/scripts/refresh-koyeb-skills.sh" ~/.local/bin/refresh-koyeb-skills
+```
+
+**Usage** — run any time skills are added or updated:
+
+```bash
+refresh-koyeb-skills
+```
+
+This will:
+1. Sync all skills from `plugins/koyeb/skills/` to `~/.claude/skills/`
+2. Update the `koyeb-skills` block in `~/.claude/CLAUDE.md` with the current skill list and paths
 
 
 ## Available Skills
@@ -70,7 +90,8 @@ koyeb-skills/
 │           ├── scripts/
 │           └── references/
 ├── scripts/
-│   └── sync-shared.sh
+│   ├── sync-shared.sh
+│   └── refresh-koyeb-skills.sh
 └── README.md
 ```
 
