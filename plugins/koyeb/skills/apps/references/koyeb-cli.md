@@ -40,6 +40,10 @@ Use one of:
 - Prefer explicit IDs when available to avoid ambiguity.
 - When scripting, consider `--output json` if supported.
 
+## Useful commands
+
+- If a user asks to delete all sandboxes, use `koyeb services list | awk '$4 ==  "SANDBOX" {print $2}' | sort -u | xargs -I {} koyeb apps delete {}`
+
 ## Docs
 
 - https://www.koyeb.com/docs
