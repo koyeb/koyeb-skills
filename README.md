@@ -35,25 +35,45 @@ Copy `plugins/koyeb/skills/` to your agent’s skills directory:
 - Cursor: `~/.cursor/skills/`
 </details>
 
-### Claude Code: refresh-koyeb-skills
+### Claude Code: refresh-claude-skills
 
-`scripts/refresh-koyeb-skills.sh` syncs all skills from this repo into `~/.claude/skills/` and updates `~/.claude/CLAUDE.md` so Claude always knows which skills are available.
+`scripts/refresh-claude-skills.sh` syncs all skills from this repo into `~/.claude/skills/` and updates `~/.claude/CLAUDE.md` so Claude always knows which skills are available.
 
-**One-time setup** — symlink the script so it’s available as a shell command:
+**One-time setup** — symlink the script so it's available as a shell command:
 
 ```bash
-ln -sf "$(pwd)/scripts/refresh-koyeb-skills.sh" ~/.local/bin/refresh-koyeb-skills
+sudo ln -sf "$(pwd)/scripts/refresh-claude-skills.sh" /usr/local/bin/refresh-claude-skills
 ```
 
 **Usage** — run any time skills are added or updated:
 
 ```bash
-refresh-koyeb-skills
+refresh-claude-skills
 ```
 
 This will:
 1. Sync all skills from `plugins/koyeb/skills/` to `~/.claude/skills/`
 2. Update the `koyeb-skills` block in `~/.claude/CLAUDE.md` with the current skill list and paths
+
+### Mistral Vibe: refresh-vibe-skills
+
+`scripts/refresh-vibe-skills.sh` syncs all skills from this repo into `~/.vibe/skills/` and updates `~/.vibe/config.toml` with the skill paths.
+
+**One-time setup** — symlink the script so it's available as a shell command:
+
+```bash
+sudo ln -sf "$(pwd)/scripts/refresh-vibe-skills.sh" /usr/local/bin/refresh-vibe-skills
+```
+
+**Usage** — run any time skills are added or updated:
+
+```bash
+refresh-vibe-skills
+```
+
+This will:
+1. Sync all skills from `plugins/koyeb/skills/` to `~/.vibe/skills/`
+2. Update the `skill_paths` array in `~/.vibe/config.toml` with the installed skill paths
 
 
 ## Available Skills
@@ -91,7 +111,8 @@ koyeb-skills/
 │           └── references/
 ├── scripts/
 │   ├── sync-shared.sh
-│   └── refresh-koyeb-skills.sh
+│   ├── refresh-claude-skills.sh
+│   └── refresh-vibe-skills.sh
 └── README.md
 ```
 
