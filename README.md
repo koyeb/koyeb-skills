@@ -118,14 +118,13 @@ koyeb-skills/
 
 ## Development
 
-Shared files live in `plugins/koyeb/skills/_shared/`. After editing shared files, run:
+Shared files live in `plugins/koyeb/skills/_shared/`. To refresh skill scripts/references and regenerate per-skill CLI command/flag docs from live `koyeb --help` output, run:
 
 ```bash
-chmod +x ./scripts/sync-shared.sh
-./scripts/sync-shared.sh
+python3 ./scripts/generate-koyeb-flag-refs.py
 ```
 
-Do not edit shared copies inside individual skills directly.
+This is the canonical refresh command. `scripts/sync-shared.sh` remains as a compatibility wrapper that delegates to it.
 
 
 ## References
